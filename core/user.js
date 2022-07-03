@@ -1,3 +1,5 @@
+'use strict';
+
 const pool = require('./pool.js');
 const bcrypt = require('bcrypt');
 

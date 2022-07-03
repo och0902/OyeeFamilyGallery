@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
@@ -6,13 +8,14 @@ const app = express();
 
 // for body parser. to collect data that sent from the client.
 app.use(express.urlencoded( { extended : false}));
-
+// Serve static files. album photos
+app.use(express.static(path.join(__dirname, './gallery')));
 // Serve static files. CSS, Images, JS files ... etc
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './public')));
 
 // Template engine. PUG
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, './views'));
+app.set('view engine', 'ejs');
 
 // session
 app.use(session({
