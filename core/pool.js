@@ -7,10 +7,10 @@ const mysql = require('mysql');
  *  */
 const pool = mysql.createPool({
    connectionLimit: 10,
-   host: 'localhost',
-   user: 'root', // use your mysql username.
-   password: 'Ohch0902', // user your mysql password.
-   database: 'oyeefamily'
+   host: process.env.POOL_HOST,
+   user: process.env.POOL_USER, // use your mysql username.
+   password: process.env.POOL_PSWORD, // user your mysql password.
+   database: process.env.POOL_DATABASE
 });
 
 pool.getConnection((err, connection) => {

@@ -133,6 +133,12 @@ nav ul li a {
   filter: contrast(1.3);
   transform: scale(1.01);
 }
+#gallery .container p {
+  z-index: 100;
+  text-decoration: none;
+  color: var(--text-color-dark);
+  font-weight: 500;
+}
 #footer {
   margin: 150px 0;
   display: flex;

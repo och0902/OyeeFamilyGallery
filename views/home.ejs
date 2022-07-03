@@ -4,14 +4,13 @@
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0 user-scalable=no">
+   <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
    <meta name="description" content="Oyee Family Gallery">
    <link rel="stylesheet" href="/css/home.css">
    <link rel="stylesheet" href="/css/lightbox.css">
    <script src="/js/lightbox-plus-jquery.js" ></script>
    <title>OyeeFamilyGallery</title>
 </head>
-
 
 <body>
 
@@ -46,9 +45,12 @@
 
    <section id="gallery">
       <div class="container">
-         <% for(var i=0; i < fileName.length; i++) { %>
-         <p><a href="/<%=directory%>/<%=fileName[i]%>" data-lightbox="mygallery"><img src="/<%=directory%>/<%=fileName[i]%>" alt=""></a>
-         <% } %>
+         <% for(var i=0; i < fileName.length; i++) {
+            var header = fileName[i].split('.');
+            var imgDate = header[0].substr(0,4)+'년 '+header[0].substr(4,2)+'월 '+header[0].substr(6,2)+'일'; %>
+         <a href="/<%=directory%>/<%=fileName[i]%>" data-lightbox="mygallery" data-title="<%=imgDate%>">
+            <img src="/<%=directory%>/<%=fileName[i]%>" alt=""><%=imgDate%></a>
+         <% }; %>
       </div>
    </section>
 

@@ -2,9 +2,14 @@
 
 const express = require('express');
 const session = require('express-session');
-const path = require('path');
-const pageRouter = require('./routes/pages.js');
 const app = express();
+
+const path = require('path');
+
+const dotenv = require('dotenv');
+dotenv.config();
+
+const pageRouter = require('./routes/pages.js');
 
 // for body parser. to collect data that sent from the client.
 app.use(express.urlencoded( { extended : false}));
@@ -44,8 +49,8 @@ app.use((err, req, res, next) => {
 });
 
 // Setting up the server
-app.listen(3000, () => {
-   console.log('Server is running on port 3000...');
+app.listen(process.env.PORT, () => {
+   console.log(`Server is running on port ${process.env.PORT}...`);
 });
 
 module.exports = app;
