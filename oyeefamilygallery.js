@@ -12,7 +12,7 @@ dotenv.config();
 const pageRouter = require('./routes/pages.js');
 
 // for body parser. to collect data that sent from the client.
-app.use(express.urlencoded( { extended : false}));
+app.use(express.urlencoded( { extended : false} ));
 // Serve static files. album photos
 app.use(express.static(path.join(__dirname, './gallery')));
 // Serve static files. CSS, Images, JS files ... etc
@@ -50,7 +50,7 @@ app.use((err, req, res, next) => {
 
 // Setting up the server
 app.listen(process.env.PORT, () => {
-   console.log(`Server is running on port ${process.env.PORT}...`);
+   console.log(`Server is running on http://localhost:${process.env.PORT}...`);
 });
 
 module.exports = app;

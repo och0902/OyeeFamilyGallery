@@ -1,15 +1,23 @@
 {
   "name": "oyeefamilygallery",
-  "version": "3.0.0",
-  "description": "OyeeFamilyGallery",
-  "main": "app.js",
+  "version": "1.0.0",
+  "description": "oyeefamilygallery",
+  "main": "oyeefamilygallery.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node oyeefamilygallery.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/och0902/OyeeFamilyGallery.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/och0902/OyeeFamilyGallery/issues"
+  },
+  "homepage": "https://github.com/och0902/OyeeFamilyGallery#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
